@@ -1,0 +1,101 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+  background-color: #1e293b;
+  color: white;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* The Board with Coordinates */
+.board-wrapper {
+  display: grid;
+  grid-template-columns: 30px repeat(9, 50px);
+  grid-template-rows: 30px repeat(9, 50px);
+  gap: 2px;
+  background-color: #0f172a;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.coordinate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #94a3b8;
+  user-select: none;
+}
+
+.cell {
+  background-color: #f59e0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  border-radius: 2px;
+  user-select: none;
+}
+
+.cell:hover { background-color: #fbbf24; }
+.cell.selected { background-color: #10b981; color: white; border: 2px solid white; }
+.white-piece { color: #b41515; }
+
+/* The Hands */
+.hand {
+  display: flex;
+  gap: 10px;
+  min-width: 450px;
+  min-height: 50px;
+  padding: 10px;
+  margin: 15px 0;
+  border: 2px dashed #475569;
+  border-radius: 8px;
+  align-items: center;
+}
+
+.hand-piece {
+  background-color: #f1f5f9;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.hand-piece.selected { background-color: #ef4444; color: white; }
+
+/* The Game Log Sidebar */
+.log-panel {
+  width: 300px;
+  background-color: #334155;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.log-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 600px;
+  margin-top: 15px;
+  background-color: #1e293b;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.log-entry {
+  padding: 5px 0;
+  border-bottom: 1px solid #475569;
+  font-family: monospace;
+}
