@@ -2,8 +2,12 @@ import { useState, useEffect } from 'react';
 import { Client } from '@stomp/stompjs';
 import './App.css';
 
-const API_URL = "http://localhost:8080/api/games";
-const WS_URL = "ws://localhost:8080/shogi-websocket";
+// Remove the hardcoded strings and replace them with this:
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080/api/games";
+
+// WebSockets need 'ws://' or 'wss://' (secure). 
+// This quick trick swaps 'http' to 'ws' automatically based on your API URL.
+const WS_URL = API_URL.replace(/^http/, 'ws').replace('/api/games', '/shogi-websocket');
 
 function App() {
   const [game, setGame] = useState(null);
